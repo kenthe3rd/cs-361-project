@@ -6,13 +6,17 @@
 ****************************************************************************************/
 
 
--- Usage Example for website:
+-- Usage Examples for website:
 
+-- to add a new user
 -- INSERT INTO `users` (`fname`, `lname`, `email`, `pass`, `geo`, `created`) VALUES ("Paul", "Staments", "shroomhat@errowind.com", "Imafungi", PointFromText("POINT(69 69)"), "2016-02-02 06:12:58");
 
+-- to get a users geolocation coordinates
 -- SELECT `geo` FROM `users` WHERE `fname` = "Adam";
 -- returns = POINT(24.4477 14.69106)
 
+-- to update a users password based on first and last name
+-- UPDATE `users` SET `pass` = "NewPass" WHERE `fname` = "Adam" AND `lname` = "Lowd";
 
 
 -- delete esisting tables
