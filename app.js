@@ -5,7 +5,7 @@ var express     = require("express"),
 
 //var mysql       = require('./dbcon.js')
 
-const apiKey = 'AIzaSyDVcB2orIUke779qyJ4p9pqqlSj4jtOCW8';    
+const apiKey = 'AIzaSyBg3NBblmeFyPMZVY1ZMCVcN4pv6Nbtf2A';    
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
