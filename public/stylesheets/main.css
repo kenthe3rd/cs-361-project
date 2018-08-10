@@ -1,0 +1,38 @@
+i.icon {
+    font-size: 2em;
+}
+
+.ui#content{
+  padding-top: 65px;
+}
+
+
+.carousel {
+   max-height: 800px;
+   max-width: 1000px;
+   overflow: hidden;
+   margin: auto;
+   
+   position: relative;
+}
+
+.carousel-caption {
+  top:0;
+  bottom:auto;
+}
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top:-100%; left:0; right: 0; bottom:-100%;
+    margin: auto;
+}
+
+#waiver {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#inner-waiver {
+    width: 100%;
+    height: 400px;
+}
