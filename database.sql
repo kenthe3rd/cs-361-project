@@ -10,11 +10,11 @@
 
 
 -- To add a new user
--- INSERT INTO `users` (`fname`, `lname`, `email`, `pass`, `geo`, `created`) VALUES ("Paul", "Staments", "shroomhat@errowind.com", "Imafungi", PointFromText("POINT(69 69)"), "2016-02-02 06:12:58");
+-- INSERT INTO `users` (`fname`, `lname`, `email`, `geolocation`, `created`) VALUES ("Paul", "Staments", "shroomhat@errowind.com", PointFromText("POINT(69 69)"), "2016-02-02 06:12:58");
 
 
 -- To get a user's geolocation coordinates
--- SELECT `geo` FROM `users` WHERE `fname` = "Adam";
+-- SELECT `geolocation` FROM `users` WHERE `fname` = "Adam";
 -- returns = POINT(24.4477 14.69106)
 
 
