@@ -1,32 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-	<title>Disaster Awareness Map</title>
-	
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-    
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
-    
-    
-    
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Disaster Relief System</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 </head>
 <body>
-    <div  class="ui fixed inverted menu">
-        <div class="ui container">
-            <div class="header item">PROJECT NAME</div>
-            <a class="item" href="/">Home</a>
-            <a class="item" href="/">Login?</a>
-            <a class="item" href="/">Other thing?</a>
+  <div  class="ui inverted menu">
+    <div class="ui container">
+      <a class="header item" href="/">Disaster Relief System</a>
+      <a class="item" href="/">Home</a>
+      {{#if user}}
+      <div class="ui dropdown item">
+        {{user.username}} <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/account">My Account</a>
+          <a class="item" href="/signout">Sign Out</a>
         </div>
-        
+      </div>
+      {{else}}
+      <a class="item" href="/signin">Sign In</a>
+      <a class="item" href="/signup">Sign Up</a>
+      {{/if}}
     </div>
-    <div id="content" class="ui container">
-        {{{body}}}
-    </div>
-	
+  </div>
+  <div class="ui main container">
+    {{{body}}}
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+  <script src="scripts/script.js"></script> 
 </body>
 </html>
