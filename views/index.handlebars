@@ -7,10 +7,18 @@
 {{#if user}}
 <h1 class="ui header">Local Issues</h1>
 <p>A map of the surrounding issues is shown here.</p>
+<div id="floating-panel">
+      <input onclick="clearMarkers();" type=button value="Hide Markers">
+      <input onclick="showMarkers();" type=button value="Show All Markers">
+      <input onclick="deleteMarkers();" type=button value="Delete Markers"><div id="floating-panel">
+      <input onclick="clearMarkers();" type=button value="Mark FIRE">
+      <input onclick="showMarkers();" type=button value="Mark FLOOD">
+      <input onclick="deleteMarkers();" type=button value="Mark BAD THING">
+</div>
 <div id="map"></div>
 <script src="scripts/map.js"></script>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg3NBblmeFyPMZVY1ZMCVcN4pv6Nbtf2A&callback=myMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg3NBblmeFyPMZVY1ZMCVcN4pv6Nbtf2A&callback=initMap">
 </script>
 {{else}}
 <h1 class="ui header">Welcome</h1>
