@@ -1,7 +1,10 @@
 var map;
-var mapMarkers = [];
+var mapUser = [];
+var mapHazards = [];
+var mapARequests = [];
 var userLocation = {lat: 39.61114, lng: -75.689443};
       
+// initializes the map
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 16,
@@ -9,12 +12,12 @@ function initMap() {
     mapTypeId: 'terrain'
   });
         
-  // This event listener will call addMarker() when the map is clicked.
+  // This event listener will call addEventMarker() when the map is clicked.
   map.addListener('click', function(event) {
     addEventMarker(event.latLng);
   });
   
-  //initialize the center mark
+  //initialize the User Marker
   addUserMarker(userLocation);
  
 }
@@ -26,10 +29,10 @@ function addUserMarker(location) {
     map: map,
     //animation: google.maps.Animation.DROP
   });
-  mapMarkers.push(marker);
+  mapUser.push(marker);
 }
 
-// Adds a marker to the map and push to the array.
+// Adds a Event Marker to the map and push to the proper array.
 function addEventMarker(location) {
   var eventIcon = {
     // This marker is 20 pixels wide by 32 pixels high.
@@ -40,6 +43,7 @@ function addEventMarker(location) {
     anchor: new google.maps.Point(25, 25)
   };
 
+  // use the proper icon
   if (document.getElementById("AR_Opt").selected){
     eventIcon["url"] = './icons/otherHaz.png';
   }
@@ -61,6 +65,7 @@ function addEventMarker(location) {
     type: 'poly'
   };
   
+  // create the Marker
   var marker = new google.maps.Marker({
     position: location,
     map: map,
@@ -68,15 +73,37 @@ function addEventMarker(location) {
     shape: shape,
     animation: google.maps.Animation.DROP,
   });
-  mapMarkers.push(marker);
+
+  // add it to the proper array
+  if (document.getElementById("AR_Opt").selected){
+    mapARequests.push(marker);
+  }
+  else{
+    mapHazards.push(marker);
+  }
 }
 
 
-// Adds a marker to the map and push to the array.
-function deleteMarkers() {
-  for (var i = 0; i < mapMarkers.length; i++) {
-    mapMarkers[i].setMap(null);
+// Removes Hazards from the map and array
+function deleteHazards() {
+  for (var i = 0; i < mapHazards.length; i++) {
+    mapHazards[i].setMap(null);
   }
-  mapMarkers = [];
-  addUserMarker(userLocation);
+  mapHazards = [];
+}
+
+
+// Removes Assistance Requests from the map and array
+function deleteARequests() {
+  for (var i = 0; i < mapARequests.length; i++) {
+    mapARequests[i].setMap(null);
+  }
+  mapARequests = [];
+}
+
+
+// removes all Event Markers from the Map
+function deleteAll() {
+  deleteHazards();
+  deleteARequests();
 }
