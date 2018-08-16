@@ -1,7 +1,33 @@
 var map;
 var mapMarkers = [];
-var userLocation = {lat: 39.61114, lng: -75.689443};
-      
+var userLocation;
+
+if (navigator.geolocation) {
+  console.log("in nav");
+  navigator.geolocation.getCurrentPosition(function(position) {
+    userLocation = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+
+    infoWindow.setPosition(pos);
+    infoWindow.setContent('Location found.');
+    infoWindow.open(map);
+    map.setCenter(pos);
+  }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } 
+  else {
+    // Browser doesn't support Geolocation
+    // handleLocationError(false, infoWindow, map.getCenter());
+    userLocation = {lat: 39.61114, lng: -75.689443};
+  }
+
+//else {
+//  userLocation = {lat: 39.61114, lng: -75.689443};
+//}
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 16,

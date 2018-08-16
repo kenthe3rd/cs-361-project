@@ -44,7 +44,7 @@ CREATE TABLE `users` (
 
 -- Add testing values to Users table
 INSERT INTO `users` (`id`, `username`, `password`, `fname`, `lname`, `email`, `geolocation`, `created`) VALUES
-(1, "alowd", "$2a$10$XQxn53ey.VCU/dc58nt72u2GvjXXn2Wjvtb0qwziqHJN8BvhTuCVS", "Adam", "Lowd", "alowd@gmail.com", PointFromText("POINT(24.44770 14.69106)"), "2018-08-02 16:33:18");
+(1, "alowd", "$2a$10$XQxn53ey.VCU/dc58nt72u2GvjXXn2Wjvtb0qwziqHJN8BvhTuCVS", "Adam", "Lowd", "alowd@gmail.com", PointFromText("POINT(24.44770 14.69106)"), "2018-08-02 16:33:18"),
 (2, "alowd", "$2a$10$nG/UF0lODWsD38jU8CBWjezNF8GoJFG9vjFfw3tlgcwiekVIkdxZ2", "Michael", "Fern", "ferndog@hotmail.com", PointFromText("POINT(121.45778 24.69106)"), "2017-10-10 12:13:59");
 
 

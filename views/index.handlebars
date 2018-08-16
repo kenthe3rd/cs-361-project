@@ -8,12 +8,17 @@
 <h1 class="ui header">Local Issues</h1>
 <p>A map of the surrounding issues is shown here.</p>
 <div id="floating-panel">
-      <input onclick="clearMarkers();" type=button value="Hide Markers">
-      <input onclick="showMarkers();" type=button value="Show All Markers">
-      <input onclick="deleteMarkers();" type=button value="Delete Markers"><div id="floating-panel">
-      <input onclick="clearMarkers();" type=button value="Mark FIRE">
-      <input onclick="showMarkers();" type=button value="Mark FLOOD">
-      <input onclick="deleteMarkers();" type=button value="Mark BAD THING">
+      <text><b>Select</b> the emergency issue before marking the map:</text>&nbsp&nbsp
+        
+        <select>
+          <option id="AR_Opt" value="assistance request">Assistance Request</option>
+          <option id="FI_Opt" value="fire">Fire</option>
+          <option id="FL_Opt" value="flood">Flooding</option>
+          <option id="EL_Opt" value="electircal">Electrical</option>
+          <option id="TO_Opt" value="toxic">Toxic Materials</option>
+        </select></br></br>
+
+        <input onclick="deleteMarkers();" type=button value="Delete Markers"><div id="floating-panel"></br>
 </div>
 <div id="map"></div>
 <script src="scripts/map.js"></script>

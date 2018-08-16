@@ -13,10 +13,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'user',
-  password: 'password',
-  database: 'database'
+  host: 'classmysql.engr.oregonstate.edu',
+  user: 'cs361_howellp',
+  password: '361password',
+  database: 'cs361_howellp'
 });
 
 const app = express();
@@ -39,7 +39,7 @@ app.use(passport.session());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 4946);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
