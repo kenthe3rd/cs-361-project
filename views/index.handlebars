@@ -11,16 +11,16 @@
       <text><b>Select</b> the emergency issue before marking the map:</text>&nbsp&nbsp
         
         <select class="ui selection dropdown">
-          <option id="AR_Opt" class="ui button" value="assistance request">Assistance Request</option>
-          <option id="FI_Opt" class="ui button" value="fire">Fire</option>
-          <option id="FL_Opt" class="ui button" value="flood">Flooding</option>
-          <option id="EL_Opt" class="ui button" value="electircal">Electrical</option>
-          <option id="TO_Opt" class="ui button" value="toxic">Toxic Materials</option>
+          <option id="AR_Opt" value="assistance request">Assistance Request</option>
+          <option id="FI_Opt" value="fire">Fire</option>
+          <option id="FL_Opt" value="flood">Flooding</option>
+          <option id="EL_Opt" value="electircal">Electrical</option>
+          <option id="TO_Opt" value="toxic">Toxic Materials</option>
         </select></br></br>
 
-        <input onclick="deleteARequests();" type=button value="Delete Assistance Requests"> &nbsp
-        <input onclick="deleteHazards();" type=button value="Delete Hazards"> &nbsp
-        <input onclick="deleteAll();" type=button value="Delete All">
+        <input onclick="deleteARequests();" class="ui button" type=button value="Delete Assistance Requests"> &nbsp
+        <input onclick="deleteHazards();" class="ui button" type=button value="Delete Hazards"> &nbsp
+        <input onclick="deleteAll();" class="ui button" type=button value="Delete All">
         <div id="floating-panel"></br>
 </div>
 <div id="map"></div>
